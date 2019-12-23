@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">AndroidApp</string>
+    <string name="app_name">Interested Map</string>
+    <string name="imap_main_activity_search_box_hint_txt">please input search sentences</string>
 </resources>
+
