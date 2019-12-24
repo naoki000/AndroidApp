@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Interested Map</string>
     <string name="imap_main_activity_search_box_hint_txt">please input search sentences</string>
+    <string name="imap_main_activity_gps_settings_message">GPSが有効になっていません。\n有効化しますか？</string>
+    <string name="imap_main_activity_gps_settings_move_message">位置情報設定起動</string>
 </resources>
 
