@@ -15,15 +15,13 @@ import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat.*
 import android.content.Context.LOCATION_SERVICE
 import android.location.LocationManager
-import android.util.Log
 import com.google.android.gms.location.LocationServices
 import com.android.app.R
 import com.android.app.common.utils.DialogUtil
 
 
-class IMapLocationController(context: Context):
+class IMapCurrentLocationController(context: Context):
         OnMapReadyCallback, LocationListener{
-
 
     var mContext = context
     var mLocationManager = mContext.getSystemService(LOCATION_SERVICE) as LocationManager
@@ -31,7 +29,7 @@ class IMapLocationController(context: Context):
     var mDialogUtil = DialogUtil(mContext)
 
     companion object {
-        val TAG = IMapLocationController::class.java.simpleName
+        val TAG = IMapCurrentLocationController::class.java.simpleName
     }
 
     init {
@@ -47,7 +45,7 @@ class IMapLocationController(context: Context):
     }
 
     fun locationStart() {
-        if (isGpsEnable()) {
+        if (!isGpsEnable()) {
             mDialogUtil.showGpsSettingsDialog(
                     R.string.imap_main_activity_gps_settings_message,
                     R.string.imap_main_activity_gps_settings_move_message)
@@ -93,7 +91,6 @@ class IMapLocationController(context: Context):
      * @param location The new location, as a Location object.
      */
     override fun onLocationChanged(location: Location?) {
-        Log.e(TAG,"onLocationChanged")
         setCurrentPosition(location)
         moveCamera(location)
     }

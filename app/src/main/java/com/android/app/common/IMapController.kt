@@ -8,7 +8,7 @@ class IMapController(context: Context, supportMapFragment: SupportMapFragment){
 
     var mContext = context
     var mSupportMapFragment = supportMapFragment
-    var mIMapLocationController = IMapLocationController(mContext)
+    var mIMapLocationController = IMapCurrentLocationController(mContext)
 
     companion object {
         val TAG = IMapController::class.java.simpleName
